@@ -12,4 +12,4 @@ Manual folder contains temporary work which detects the location of fracture in 
 * Run `main.py`: `python main.py`
 
 ###
-If you want to test on different images, alter the corresponding variables inside `main.py`
+If you want to test on different images, alter the corresponding variables inside `main.py` 

@@ -36,14 +36,7 @@ def _reshape_img(arr):
     return flat_arr
 
 def _create_data(train_img_list, label_list):
-    """
-    param train_img_list: A list containg images to train model upon
-    param label_list: A list containing labels corresponding to images
-                      in the train_img_list
-    
-    returns inp_arr: a ready-to-feed numpy array for training
-    returns np.array(label_list): a numpy array of corresponding label_list
-    """
+
     inp_arr=[]
 
     for img in train_img_list:

@@ -4,13 +4,6 @@ import numpy as np
 from pre_process import _reshape_img, get_model
 
 img_name="new"
-"""
-Currently, `img_name` will be used to get resized image from `images/resized` folder
-and original image from `images/Fractured Bone` so it expects the same named image file
-to be available in both the folders.
-
-All names starting with F{n} are available in both the folders. 1<= n <=100
-"""
 
 model_name= "ridge_model"
 
@@ -34,12 +27,7 @@ except (AttributeError,FileNotFoundError):
 		img=cv2.imread(orig_img+".png",cv2.IMREAD_COLOR)
 		shape=img.shape
 
-	#else: raise FileNotFoundError("No image file {img_file}.jpg or {img_file}.JPG".format(img_file=img_file))
-#else:
-#	raise FileNotFoundError("No image file {img_file}.jpg or {img_file}.JPG".format(img_file=img_file))
 
-
-#details of Imge
 print("\nShape: ",shape)
 print("\nSize: ",img.size)
 print("\nDType: ",img.dtype)
@@ -58,12 +46,7 @@ def segment_img(_img,limit):
 
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
-#for i in range(0,gray.shape[0]):
-#	for j in range(0,gray.shape[1]): 
-#		if (int(gray[i,j]))<=100:
-#			gray[i,j]=100
 
-#gray=segment_img(gray,15)
 cv2.imshow("GrayEdited",gray)
 median = cv2.medianBlur(gray,5)
 
@@ -77,9 +60,6 @@ cv2.imshow("threshold",threshold_img)
 initial=[]
 final=[]
 line=[]
-#count=[]
-#for i in range(0,256):
-#	count.append(0)
 
 for i in range(0,gray.shape[0]):
 	tmp_initial=[]
